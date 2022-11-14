@@ -20,11 +20,26 @@
     <!-- tambah data siswa -->
     <div class="row">
         <div class="col-md-6">
-            <h3>Daftar Siswa</h3>
-            <button type="button" class="btn btn-primary tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal" id="tombolTambahData">
+        <button type="button" class="btn btn-primary tombolTambahData mt-4" data-bs-toggle="modal" data-bs-target="#formModal" id="tombolTambahData">
                 Tambah Data Siswa
             </button>
-            <br><br>
+        </div>
+    </div>
+    <!-- cari data siswa -->
+    <div class="row mt-2">
+        <div class="col-md-6">
+           <form action="<?= BASEURL ?>/siswa/cari" method="post">
+                <div class="input-group mb-3">
+                    <input type="search" class="form-control" placeholder="Cari data siswa!" name="keyword" id="keyword" autocomplete="off">
+                    <button class="btn btn-outline-success" type="submit" id="tombolCari">Cari!</button>
+                </div>
+        </form>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <h3>Daftar Siswa</h3>
             <!-- table data siswa -->
             <?php foreach ($data['siswa'] as $swa) : ?>
                 <div class="list-group mt-3">
