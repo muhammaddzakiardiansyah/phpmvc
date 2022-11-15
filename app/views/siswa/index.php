@@ -71,7 +71,7 @@
             </div>
             <div class="modal-body">
                 <form action="<?= BASEURL; ?>/siswa/tambah" method="post">
-                        <input type="hidden" nama="id" id="id">
+                        <input type="hidden" name="id" id="id">
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama">

@@ -52,30 +52,25 @@ class Siswa_model
     }
 
     public function editDataSiswa($data) {
-
+        // var_dump($data);
         $query = "UPDATE siswa SET
+                    nama = :nama,
+                    nis = :nis,
+                    email = :email,
+                    jurusan = :jurusan
+                  WHERE id = :id";
+        
+        $this->db->query($query);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('nis', $data['nis']);
+        $this->db->bind('email', $data['email']);
+        $this->db->bind('jurusan', $data['jurusan']);
+        $this->db->bind('id', $data['id']);
 
-                    nama=:nama,
-                    nis=:nis,
-                    email=:email,
-                    jurusan=:jurusan
-
-                 WHERE id=:id";
-       
-       $this->db->query($query);
-      
-       $this->db->bind('nama', $data['nama']);
-       $this->db->bind('nis', $data['nis']);
-       $this->db->bind('email', $data['email']);
-       $this->db->bind('jurusan', $data['jurusan']);
-       $this->db->bind('id', $data['id']);
-       
-
-       $this->db->execute();
+        $this->db->execute();
 
         return $this->db->rowCount();
-
-   }
+    }
 
    public function cariDataSiswa() {
 

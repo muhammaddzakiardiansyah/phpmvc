@@ -55,6 +55,8 @@
 
     public function edit() {
 
+        // var_dump($_POST);
+
         if( $this->model('Siswa_model')->editDataSiswa($_POST) > 0 ) {
             Flasher::setFlash('Berhasil', 'Diubah', 'success', $this->iconSuccess, '#check-circle-fill');
             header('Location: ' . BASEURL . '/siswa');
