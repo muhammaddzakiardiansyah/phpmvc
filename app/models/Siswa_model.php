@@ -54,11 +54,13 @@ class Siswa_model
     public function editDataSiswa($data) {
 
         $query = "UPDATE siswa SET
-                    nama = :nama,
-                    nis = :nis,
-                    email = :email,
-                    jurusan = :jurusan
-                 WHERE id = :id";
+
+                    nama=:nama,
+                    nis=:nis,
+                    email=:email,
+                    jurusan=:jurusan
+
+                 WHERE id=:id";
        
        $this->db->query($query);
       
@@ -78,11 +80,15 @@ class Siswa_model
    public function cariDataSiswa() {
 
       $keyword = $_POST['keyword'];
-      $query = "SELECT * FROM siswa WHERE 
+      $query = "SELECT * FROM siswa 
+
+                  WHERE 
+
                   nama LIKE :keyword OR
                   nis LIKE :keyword OR
                   email LIKE :keyword OR
                   jurusan LIKE :keyword
+
                   ";
 
       $this->db->query($query);
